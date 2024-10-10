@@ -113,14 +113,16 @@
           </form>
         </div> -->
 
-        <form class="row g-3">
+        <form class="row g-3 mb-6">
           <div class="col-md-6">
             <label for="author-name" class="form-label">Nome Autore</label>
             <input
               type="text"
               class="form-control"
               id="author_name"
+              name="author-name"
               placeholder="Inserisci il nome dell'autore"
+              required
             />
           </div>
           <div class="col-md-6">
@@ -131,7 +133,9 @@
               type="text"
               class="form-control"
               id="author_surname"
+              name="author-surnname"
               placeholder="Inserisci il cognome dell'autore"
+              required
             />
           </div>
           <div class="col-12">
@@ -140,7 +144,9 @@
               type="text"
               class="form-control"
               id="title"
+              name="item-title"
               placeholder="Inserisci il titolo del libro"
+              required
             />
             <div id="passwordHelpBlock" class="form-text">
               Titolo versione italiana
@@ -151,45 +157,64 @@
           </div>
 
           <div class="col-12 col-lg-4">
-            <label for="inputState" class="form-label">Genere</label>
-            <select id="inputState" class="form-select">
+            <label for="genre" class="form-label">Genere</label>
+            <select id="genre" class="form-select" name="item-genre">
               <option selected>Scegli il genere</option>
-              <option>Uomo</option>
-              <option>Donna</option>
-              <option>Altro</option>
-              <option>Preferisco non rispondere</option>
+              <option>Biografico</option>
+              <option>Romanzo Storico</option>
+              <option>Saggio</option>
+              <option>Romanzo</option>
+              <option>Giallo</option>
             </select>
           </div>
+
           <div class="col-12 col-lg-4">
-            <label for="inputAddress2" class="form-label"
-              >Anno di pubblicazione</label
-            >
+            <label for="year" class="form-label">Anno di pubblicazione</label>
             <input
-              type="select"
+              type="number"
               class="form-control"
-              id="inputAddress2"
-              placeholder="Apartment, studio, or floor"
+              id="year"
+              name="item-year"
+              placeholder="Inserisci l'anno"
+              required
             />
           </div>
-          <div class="col-12 col-lg-4">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity" />
+
+          <div class="col-12 col-lg-4 mb-4">
+            <label for="inputCity" class="form-label">ISBN#</label>
+            <input
+              type="text"
+              class="form-control"
+              id="isbn"
+              name="item-isbn"
+              required
+            />
           </div>
 
-          <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip" />
-          </div>
+          <hr class="mb-4" />
+        </form>
+
+        <!-- Come trattare le textarea? dentro a form? -->
+
+        <form class="row g-3">
           <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" />
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
+            <label for="floatingTextarea" class="mb-2">Note</label>
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                placeholder="Leave a comment here"
+                id="floatingTextarea"
+                name="notes"
+                rows="10"
+              ></textarea>
+              <label for="floatingTextarea" class="text-secondary"
+                >Inserisci eventuali note sul libro</label
+              >
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <input type="checkbox" name="digital-option" id="digital_option" />
+            <label for="digital_option"></label>
           </div>
         </form>
       </div>
